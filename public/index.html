@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script src="/js/vendor/socket.io-client/socket.io.js"></script>
+
+	<script>
+		function onStuff(stuff){
+			document.getElementById('dot').style.left = stuff;
+		}
+
+		var socket = io.connect(window.document.location.origin);
+		socket.on('stuff', onStuff);
+	</script>
+
+	<style>
+		div#dot{
+			width:10px;
+			height: 10px;
+			background: pink;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="dot"></div>
+</body>
+</html>
